@@ -41,8 +41,14 @@ VALIDATE $? "starting mysql"
 
 # my root password
 
+mysql -h db.mounikadaws.online -uroot -pExpenseApp@1 -e 'show databases'&>>$LOGFILE
+if [ $? -ne 0 ]
+then     
 mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
 VALIDATE $? "setting up the root password"
+else
+    echo "my sql password already setup"
+fi
 
 
 
