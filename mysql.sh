@@ -22,7 +22,7 @@ else
 fi
 }
 
-if [ USERID -ne 0 ] 
+if [ $USERID -ne 0 ] 
 then 
     echo "you are not the root user to run the script"
     exit 1
