@@ -10,8 +10,6 @@ R="\e[31m"
 G="\e[32m"
 N="\e[0m"
 
-echo "enter the root password :"
-read $myroot_password
 
 VALIDATE() {
 
@@ -41,9 +39,9 @@ VALIDATE $? "enabling mysql service"
 systemctl start mysqld &>>$LOGFILE
 VALIDATE $? "starting mysql"
 
-#ExpenseApp@1 my root password
+# my root password
 
-mysql_secure_installation --set-root-pass $myroot_password &>>$LOGFILE
+mysql_secure_installation --set-root-pass ExpenseApp@1 &>>$LOGFILE
 VALIDATE $? "setting up the root password"
 
 
