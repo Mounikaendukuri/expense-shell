@@ -85,7 +85,7 @@ dnf install mysql -y &>>LOGFILE
 VALIDATE $? "installing mysql client"
 
 
-mysql -h <MYSQL-SERVER-IPADDRESS> -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>LOGFILE
+mysql -h <db.mounikadaws.online> -uroot -p${mysql_root_password} < /app/schema/backend.sql &>>LOGFILE
 VALIDATE $? "schema loading"
 
 systemctl restart backend &>>LOGFILE
