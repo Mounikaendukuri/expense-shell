@@ -25,11 +25,11 @@ VALIDATE() {
 }
 
 if [ $USERID -ne 0 ]
-then 
-    echo "you are not the root user"
-    exit 1
-else    
-    echo "you are root user"
+then
+    echo "Please run this script with root access."
+    exit 1 # manually exit if error comes.
+else
+    echo "You are super user."
 fi
 
 
