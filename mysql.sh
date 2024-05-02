@@ -13,7 +13,7 @@ N="\e[0m"
 echo "enter the root password :"
 read $myroot_password
 
-VALIDATE(){
+VALIDATE() {
 
 if [ $? -ne 0 ]
 then
@@ -22,7 +22,6 @@ then
 else
     echo "-e $2 is $G sucess $N"
 fi
-
 }
 
 if [ USERID -ne 0 ] 
